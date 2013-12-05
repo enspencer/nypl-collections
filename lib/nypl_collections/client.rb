@@ -27,6 +27,17 @@ module Collections
         })
     end
 
+    def return_uuid_for_local_identifier
+    end
+
+    def search_in_mods_field
+    end
+
+    def search_all_mods_fields
+    end
+
+    def return_mods_record_for_capture_uuid
+
   end
 end
 
