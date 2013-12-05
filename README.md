@@ -1,8 +1,8 @@
-= nypl-collections
+## nypl-collections
 
-Description goes here.
+This will be a Ruby gem for the New York Public Library [Digital Collections API](http://api.repo.nypl.org/)! Just got started on December 4, 2013, so check back for when it's usable, or contribute to make it happen!
 
-== Contributing to nypl-collections
+## Contributing to nypl-collections
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
