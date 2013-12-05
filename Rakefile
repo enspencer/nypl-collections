@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "nypl-collections"
   gem.homepage = "http://github.com/enspencer/nypl-collections"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{A gem for interacting with the NYPL Digital Collections API}
+  gem.description = %Q{A gem for interacting with the NYPL Digital Collections API}
   gem.email = "emma.n.spencer@gmail.com"
   gem.authors = ["Emma Spencer"]
   # dependencies defined in Gemfile
@@ -32,13 +32,13 @@ Rake::TestTask.new(:test) do |test|
   test.verbose = true
 end
 
-require 'rcov/rcovtask'
-Rcov::RcovTask.new do |test|
-  test.libs << 'test'
-  test.pattern = 'test/**/test_*.rb'
-  test.verbose = true
-  test.rcov_opts << '--exclude "gems/*"'
-end
+# require 'rcov/rcovtask'
+# Rcov::RcovTask.new do |test|
+#   test.libs << 'test'
+#   test.pattern = 'test/**/test_*.rb'
+#   test.verbose = true
+#   test.rcov_opts << '--exclude "gems/*"'
+# end
 
 task :default => :test
 
