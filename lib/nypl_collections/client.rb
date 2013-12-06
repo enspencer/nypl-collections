@@ -10,18 +10,35 @@ module Collections
     include Collections::Configuration
     include HTTParty
 
+    BASE_URL = "http://api.repo.nypl.org/api/v1/items/"
+    BASE_URL
+
     def initialize
       reset
     end
 
-    def return_captures_for_uuid(options= {})
-      token = auth_token
+    def set_urlparam(url, name, options)
+      return unless options[name]
+      url << "&#{name.to_s}=#{options[name]}"
+    end
 
-      if options == "withTitles"
-        withTitles = "withTitles=yes"
+    def return_captures_for_uuid(uuid, options= {})
+      url = BASE_URL.clone
+      token = auth_token
+      uuid = uuid
+
+      url << uuid + "?"
+
+      if options[:withTitles]
+        title = options[:withTitles]
+        url << "withTitles=#{title}"
       end
 
-      HTTParty.get("http://api.repo.nypl.org/api/v1/items/5fa75050-c6c7-012f-e24b-58d385a7bc34?#{withTitles}",
+      [:per_page, :page].each do |thing|
+        set_urlparam(url, thing, options)
+      end
+
+      HTTParty.get(url,
         :headers => {
           "Authorization" => "Token token=#{token}"
         })
@@ -49,5 +66,5 @@ end
 #   config.auth_token = ENV['AUTH_TOKEN']
 # end
 
-# puts @client.return_captures_for_uuid("withTitles")
+# puts @client.return_captures_for_uuid('5fa75050-c6c7-012f-e24b-58d385a7bc34', withTitles: 'yes')
 # binding.pry
