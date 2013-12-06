@@ -2,7 +2,7 @@
 
 [![Coverage Status](https://coveralls.io/repos/enspencer/nypl-collections/badge.png)](https://coveralls.io/r/enspencer/nypl-collections)
 
-## nypl-collections
+# nypl-collections
 
 This will be a Ruby gem for the [New York Public Library Digital Collections API](http://api.repo.nypl.org/). Just got started on December 4, 2013, so check back for when it's usable, or contribute to make it happen!
 
@@ -10,7 +10,7 @@ This will be a Ruby gem for the [New York Public Library Digital Collections API
 
 ## Methods
 
-# return_captures_for_uuid(uuid, options= {})
+### return_captures_for_uuid(uuid, options= {})
 Takes a UUID for any bibliographic level, including container (a/k/a parent), collection or item-level records. Takes optional parameters of withTitles, per_page, and page.
 
 Returns all captures for a parent-level UUID or a item-level UUID, and display the uuid, imageID, itemLink and title (optional) for each capture.
@@ -96,7 +96,7 @@ returns:
         "itemLink"=>"http://digitalgallery.nypl.org/nypldigital/id?1582680",
         "dateDigitized"=>"2012-08-16T00:34:11Z"}]}}}
 ```
-# return_uuid_for_local_identifier(local_id_name, local_id_value)
+### return_uuid_for_local_identifier(local_id_name, local_id_value)
 
 Takes parameters of local identifier field name and local identifier value.
 
