@@ -19,7 +19,7 @@ module Collections
 
     def set_urlparam(url, name, options)
       return unless options[name]
-      url << "&#{name.to_s}=#{options[name]}"
+      url << "&#{name.to_s.gsub(/ /,'_')}=#{options[name]}"
     end
 
     def return_captures_for_uuid(uuid, options= {})
