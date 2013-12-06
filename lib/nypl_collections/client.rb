@@ -22,6 +22,8 @@ module Collections
       url << "&#{name.to_s.gsub(/ /,'_')}=#{options[name]}"
     end
 
+# Return all capture UUIDs, imageIDs, itemLinks and
+# titles (optional) for any UUID 
     def return_captures_for_uuid(uuid, options= {})
       url = BASE_URL.clone
       token = auth_token
@@ -44,6 +46,9 @@ module Collections
         })
     end
 
+# Return uuid for a local identifier.
+# Local_identifier field names can be found in the
+# "type" attribute of the MODS <identifier> element
     def return_uuid_for_local_identifier(local_id_name, local_id_value)
       url = BASE_URL.clone
       token = auth_token
@@ -59,7 +64,24 @@ module Collections
 
     end
 
-    def search_in_mods_field
+
+# search in fields: identifier, typeOfResource, note
+# title, namePart, place, publisher, topic,
+# geographic, temporal, genre, physicalLocation, and shelfLocator
+# enter search_terms 
+    def search_in_mods_field(search_terms, field)
+      # search?q=[search-terms]&field=[mods-field] 
+      url = BASE_URL.clone
+      token = auth_token
+      search_terms = search_terms.gsub(/ /, "-").gsub(/_/, "-")
+      field = field
+
+      url << "search?q=#{search_terms}&field=#{field}"
+
+      HTTParty.get(url,
+        :headers => {
+          "Authorization" => "Token token=#{token}"
+        })
     end
 
     def search_all_mods_fields

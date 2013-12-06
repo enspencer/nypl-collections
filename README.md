@@ -1,6 +1,4 @@
-[![Build Status](https://travis-ci.org/enspencer/nypl-collections.png?branch=master)](https://travis-ci.org/enspencer/nypl-collections)
-
-[![Coverage Status](https://coveralls.io/repos/enspencer/nypl-collections/badge.png)](https://coveralls.io/r/enspencer/nypl-collections)
+[![Build Status](https://travis-ci.org/enspencer/nypl-collections.png?branch=master)](https://travis-ci.org/enspencer/nypl-collections)[![Coverage Status](https://coveralls.io/repos/enspencer/nypl-collections/badge.png)](https://coveralls.io/r/enspencer/nypl-collections)
 
 # nypl-collections
 
