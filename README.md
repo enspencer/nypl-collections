@@ -8,6 +8,17 @@ This will be a Ruby gem for the [New York Public Library Digital Collections API
 
 ## Setting Up
 
+Sign up for an [API key](http://api.repo.nypl.org/) to start.
+
+Setup a new instance:
+
+```ruby
+@client = Collections::Client.new
+@client.configure do |config|
+  config.auth_token = YOUR_AUTH_TOKEN
+end
+```
+
 ## Methods
 
 ### return_captures_for_uuid(uuid, options= {})
