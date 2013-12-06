@@ -61,7 +61,6 @@ module Collections
         :headers => {
           "Authorization" => "Token token=#{token}"
         })
-
     end
 
 
@@ -70,7 +69,6 @@ module Collections
 # geographic, temporal, genre, physicalLocation, and shelfLocator
 # enter search_terms 
     def search_in_mods_field(search_terms, field)
-      # search?q=[search-terms]&field=[mods-field] 
       url = BASE_URL.clone
       token = auth_token
       search_terms = search_terms.gsub(/ /, "-").gsub(/_/, "-")
@@ -84,10 +82,32 @@ module Collections
         })
     end
 
-    def search_all_mods_fields
+# same as search_in_mods_fields but don't need to specify a field
+    def search_all_mods_fields(search_terms)
+      url = BASE_URL.clone
+      token = auth_token
+      search_terms = search_terms.gsub(/ /, "-").gsub(/_/, "-")
+
+      url << "search?q=#{search_terms}"
+
+      HTTParty.get(url,
+        :headers => {
+          "Authorization" => "Token token=#{token}"
+        })
     end
 
-    def return_mods_record_for_capture_uuid
+    def return_mods_record_for_capture_uuid(uuid)
+      url = BASE_URL.clone
+      token = auth_token
+      uuid = uuid
+
+      url << "mods/#{uuid}"
+
+      HTTParty.get(url,
+        :headers => {
+          "Authorization" => "Token token=#{token}"
+        })
+
     end
 
   end
