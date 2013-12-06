@@ -44,7 +44,19 @@ module Collections
         })
     end
 
-    def return_uuid_for_local_identifier
+    def return_uuid_for_local_identifier(local_id_name, local_id_value)
+      url = BASE_URL.clone
+      token = auth_token
+      local_id_name = local_id_name
+      local_id_value = local_id_value
+
+      url << "#{local_id_name}/#{local_id_value}"
+
+      HTTParty.get(url,
+        :headers => {
+          "Authorization" => "Token token=#{token}"
+        })
+
     end
 
     def search_in_mods_field

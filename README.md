@@ -11,7 +11,7 @@ This will be a Ruby gem for the [New York Public Library Digital Collections API
 ## Methods
 
 # return_captures_for_uuid(uuid, options= {})
-Takes a UUID and optional parameters of withTitles, per_page, and page.
+Takes a UUID for any bibliographic level, including container (a/k/a parent), collection or item-level records. Takes optional parameters of withTitles, per_page, and page.
 
 Returns all captures for a parent-level UUID or a item-level UUID, and display the uuid, imageID, itemLink and title (optional) for each capture.
 
@@ -96,7 +96,48 @@ returns:
         "itemLink"=>"http://digitalgallery.nypl.org/nypldigital/id?1582680",
         "dateDigitized"=>"2012-08-16T00:34:11Z"}]}}}
 ```
+# return_uuid_for_local_identifier(local_id_name, local_id_value)
 
+Takes parameters of local identifier field name and local identifier value.
+
+Returns uuid for a local identifier.Local_identifier field names can be found in the "type" attribute of the MODS <identifier> element (e.g. <identifier type="local_[identifier-field-name]">).
+
+What is MODS, you ask? [Here you go.](http://www.loc.gov/standards/mods/)
+
+Also returns page, perPage, totalPages, numResults.
+
+example: 
+```ruby
+@client.return_uuid_for_local_identifier('local_hades', '1017240')
+```
+
+returns:
+```json
+{"nyplAPI"=>
+  {"request"=>
+    {"uuid"=>"ecaf7d80-c55f-012f-e3c7-58d385a7bc34",
+     "perPage"=>"10",
+     "page"=>"1",
+     "totalPages"=>"1",
+     "startTime"=>"Beginning of Time",
+     "endTime"=>"Till Now"},
+   "response"=>
+    {"headers"=>{"status"=>"success", "code"=>"200", "message"=>"ok"},
+     "numResults"=>"2",
+     "capture"=>
+      [{"uuid"=>"510d47e2-8e15-a3d9-e040-e00a18064a99",
+        "typeOfResource"=>"still image",
+        "imageID"=>"836959",
+        "sortString"=>"0000000001|0000001105|0000000015|0000000001",
+        "itemLink"=>"http://digitalgallery.nypl.org/nypldigital/id?836959",
+        "dateDigitized"=>"2013-02-28T20:39:36Z"},
+       {"uuid"=>"510d47e2-8e16-a3d9-e040-e00a18064a99",
+        "typeOfResource"=>"still image",
+        "imageID"=>"836960",
+        "sortString"=>"0000000001|0000001105|0000000015|0000000002",
+        "itemLink"=>"http://digitalgallery.nypl.org/nypldigital/id?836960",
+        "dateDigitized"=>"2013-02-28T20:39:36Z"}]}}}
+```
 
 ## Contributing to nypl-collections
  
