@@ -1,4 +1,4 @@
-require './nypl_collections/client'
+require 'nypl_collections/client'
 
 module Collections
   class << self

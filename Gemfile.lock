@@ -17,6 +17,8 @@ GEM
       simplecov (>= 0.7)
       term-ansicolor
       thor
+    crack (0.4.1)
+      safe_yaml (~> 0.9.0)
     diff-lcs (1.2.5)
     docile (1.1.1)
     dotenv (0.9.0)
@@ -81,6 +83,7 @@ GEM
     rspec-expectations (2.14.4)
       diff-lcs (>= 1.1.3, < 2.0)
     rspec-mocks (2.14.4)
+    safe_yaml (0.9.7)
     shoulda (3.5.0)
       shoulda-context (~> 1.0, >= 1.0.1)
       shoulda-matchers (>= 1.4.1, < 3.0)
@@ -100,6 +103,9 @@ GEM
       atomic
     tins (0.13.1)
     tzinfo (0.3.38)
+    webmock (1.16.0)
+      addressable (>= 2.2.7)
+      crack (>= 0.3.2)
 
 PLATFORMS
   ruby
@@ -115,4 +121,6 @@ DEPENDENCIES
   rdoc (~> 3.12)
   rspec
   shoulda
+  shoulda-matchers
   simplecov
+  webmock

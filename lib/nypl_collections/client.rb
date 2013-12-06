@@ -1,6 +1,6 @@
 require 'json'
 require 'httparty'
-require './nypl_collections/configuration'
+require 'nypl_collections/configuration'
 require 'pry'
 require 'dotenv'
 Dotenv.load "../.env"
@@ -37,16 +37,17 @@ module Collections
     end
 
     def return_mods_record_for_capture_uuid
+    end
 
   end
 end
 
 
 
-@client = Collections::Client.new
-@client.configure do |config|
-  config.auth_token = ENV['AUTH_TOKEN']
-end
+# @client = Collections::Client.new
+# @client.configure do |config|
+#   config.auth_token = ENV['AUTH_TOKEN']
+# end
 
-puts @client.return_captures_for_uuid("withTitles")
-binding.pry
+# puts @client.return_captures_for_uuid("withTitles")
+# binding.pry
