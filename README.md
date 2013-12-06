@@ -17,8 +17,11 @@ Returns all captures for a parent-level UUID or a item-level UUID, and display t
 
 Example:
 
+```ruby
 @client.return_captures_for_uuid('5fa75050-c6c7-012f-e24b-58d385a7bc34', per_page: '10', page: '2')
+```
 
+returns:
 ```json
 {"nyplAPI"=>
   {"request"=>
