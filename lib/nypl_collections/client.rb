@@ -60,11 +60,9 @@ module Collections
 end
 
 
-
 # @client = Collections::Client.new
 # @client.configure do |config|
 #   config.auth_token = ENV['AUTH_TOKEN']
+#   binding.pry
 # end
-
-# puts @client.return_captures_for_uuid('5fa75050-c6c7-012f-e24b-58d385a7bc34', withTitles: 'yes')
-# binding.pry
+binding.pry
