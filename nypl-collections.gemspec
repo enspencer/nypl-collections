@@ -54,6 +54,7 @@ Gem::Specification.new do |s|
     "lib/nypl_collections.rb",
     "lib/nypl_collections/client.rb",
     "lib/nypl_collections/configuration.rb",
+    "nypl-collections.gemspec",
     "spec/fixtures/return_captures_for_uuid.json",
     "spec/nypl_collections/client_spec.rb",
     "spec/nypl_collections/configuration_spec.rb",
