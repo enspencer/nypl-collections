@@ -149,10 +149,19 @@ returns:
 ```
 
 ### search_in_mods_field(search_terms, field)
+Pass any search term as the first parameter, and one of the available fields as the second parameter.
+
+Available fields: identifier, typeOfResource, note, title, namePart, place, publisher, topic, geographic, temporal, genre, physicalLocation, and shelfLocator
 
 ### search_all_mods_fields(search_terms)
+Search for a 
 
 ### return_mods_record_for_capture_uuid(uuid)
+Pass in a UUID to get the bibliographic record.
+
+```ruby
+@client.return_mods_record_for_capture_uuid("510d47dd-f29d-a3d9-e040-e00a18064a99")
+```
 
 ## Contributing to nypl-collections
  
