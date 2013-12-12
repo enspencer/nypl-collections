@@ -148,6 +148,12 @@ returns:
         "dateDigitized"=>"2013-02-28T20:39:36Z"}]}}}
 ```
 
+### search_in_mods_field(search_terms, field)
+
+### search_all_mods_fields(search_terms)
+
+### return_mods_record_for_capture_uuid(uuid)
+
 ## Contributing to nypl-collections
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
