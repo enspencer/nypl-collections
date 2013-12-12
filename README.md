@@ -153,8 +153,18 @@ Pass any search term as the first parameter, and one of the available fields as 
 
 Available fields: identifier, typeOfResource, note, title, namePart, place, publisher, topic, geographic, temporal, genre, physicalLocation, and shelfLocator
 
+example:
+```ruby
+@client.search_in_mods_fields('birds', 'topic')
+```
+
 ### search_all_mods_fields(search_terms)
-Search for a 
+Similar to search_in_mods_field but searches all fields.
+
+example:
+```ruby
+@client.search_all_mods_fields('olmsted)
+```
 
 ### return_mods_record_for_capture_uuid(uuid)
 Pass in a UUID to get the bibliographic record.
