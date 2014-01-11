@@ -2,7 +2,7 @@
 
 # nypl-collections
 
-This will be a Ruby gem for the [New York Public Library Digital Collections API](http://api.repo.nypl.org/). Just got started on December 4, 2013, so check back for when it's usable, or contribute to make it happen!
+This is a Ruby gem for the [New York Public Library Digital Collections API](http://api.repo.nypl.org/). The methods work, but I need to write more tests and improve the documentation. You can contribute to make it happen!
 
 ## Setting Up
 
